@@ -1,4 +1,4 @@
-/*
+
 let js = 'amazing';
 console.log(40 + 0 + 23 - 10 + ' ' + js);
 
@@ -21,6 +21,7 @@ function changeName() {
     }
     
 }
+/*
 
 let javascriptIsFun = true;
 console.log(typeof true);
@@ -94,7 +95,7 @@ console.log(ageDan > ageAnn)
 console.log(ageAnn >= 21)
 
 const isFullAge = ageSarah >= 21;
-*/
+
 
 const currentYear = 2024
 
@@ -115,3 +116,155 @@ const averageAge = (ageAnn + ageDan) / 2
 console.log('the average age is ' + averageAge)
 
 console.log(ageAnn, ageDan);
+
+
+const firstName = 'Dan';
+const job = 'video editor';
+const birthYear = "1975";
+const year = 2024;
+const home = 'Mississauga'
+
+const dan = "I'm " + firstName + ', a ' + (year - birthYear) + ' year-old ' + job + ' from ' + home + '!'
+
+console.log(dan);
+
+const danNew = `I'm ${firstName}, a ${year - birthYear} year-old ${job} from ${home}!`;
+
+console.log(danNew);
+console.log(typeof danNew);
+console.log(`hello`);
+
+console.log('String with\n\a line space\n\and another')
+
+console.log(`this has
+multiple lines
+in this sentence`)
+
+
+
+const yearsLeft = 0;
+const ageLicense = 17;
+
+const dan = {
+    name: 'Dan',
+    age: 49,
+}
+const lincoln = {
+    name: 'Lincoln',
+    age: 1
+}
+const ann = {
+    name: 'Ann',
+    age: 48
+}
+
+
+function oldEnough (person) {   
+    if (person.age >= ageLicense) {
+        console.log(`${person.name} is old enough to drive.`)
+    } else {
+        const yearsLeft = ageLicense - person.age
+        console.log(`${person.name} has to wait ${yearsLeft} years to drive`);
+    } 
+}
+
+
+oldEnough (dan);
+oldEnough (lincoln);
+oldEnough (ann)
+
+
+const birthYear = 2012;
+let century;
+
+if (birthYear <= 2000) {
+    century = 20
+} else {
+    century = 21
+}
+
+console.log(century);
+
+
+// type conversion
+const inputYear = '2024';
+
+
+console.log(Number(inputYear), inputYear)
+console.log(Number(inputYear) + 18);
+
+console.log(Number('dan'));
+console.log(typeof Number('dan'))
+
+console.log(String(23), 23);
+
+const stringYear = String(2024);
+
+console.log(stringYear)
+
+// type coercion
+
+console.log('I am ' + 34 + ' years old')
+
+console.log('23' - '10' - 3);
+
+console.log('23' + '10' + 3);
+
+console.log('23' * '2');
+
+let n = '1' + 1;
+// n = '11'
+n = n - 1;
+// n = 10
+console.log(n);
+// 10
+
+
+
+// 5 falsy values: 0, '', undefined, null, NaN
+
+console.log(Boolean(0));
+console.log(Boolean(undefined));
+console.log(Boolean('Dan'));
+console.log(Boolean({}));
+console.log(Boolean(''))
+
+const money = 100;
+
+if (money) {
+    console.log("Don't spend it all :)")
+} else {
+    console.log("You should get a job!")
+}
+
+let height = 2;
+
+if (height) {
+    console.log('Yay! height is defined');
+} else {
+    console.log('Height is undefined!');
+}
+
+*/
+
+const age = '18';
+
+if (age === 18) console.log('You just became an adult! strict');
+
+if (age == 18) console.log('You just became an adult! loose');
+
+const favourite = Number(prompt("What's your favourite number?"));
+
+
+console.log(favourite)
+console.log(typeof favourite)
+
+if (favourite === 23) {
+    console.log('Cool! 23 is an amazing number!')
+} else if (favourite === 7) {
+    console.log('7 is also a cool number')
+} else {
+    console.log('Number is not 23 or 7')
+}
+
+if (favourite !== 23) console.log('Why not 23?');
