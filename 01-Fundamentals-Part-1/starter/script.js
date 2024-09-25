@@ -1,4 +1,4 @@
-
+/*
 let js = 'amazing';
 console.log(40 + 0 + 23 - 10 + ' ' + js);
 
@@ -21,7 +21,7 @@ function changeName() {
     }
     
 }
-/*
+
 
 let javascriptIsFun = true;
 console.log(typeof true);
@@ -226,7 +226,7 @@ console.log(n);
 console.log(Boolean(0));
 console.log(Boolean(undefined));
 console.log(Boolean('Dan'));
-console.log(Boolean({}));
+console.log(Boolean({})
 console.log(Boolean(''))
 
 const money = 100;
@@ -245,7 +245,7 @@ if (height) {
     console.log('Height is undefined!');
 }
 
-*/
+
 
 const age = '18';
 
@@ -268,3 +268,34 @@ if (favourite === 23) {
 }
 
 if (favourite !== 23) console.log('Why not 23?');
+
+
+*/
+
+const hasDriversLicense = true; // A
+const hasGoodVision = true; // B
+
+console.log(hasDriversLicense && hasGoodVision)
+
+
+console.log(hasDriversLicense || hasGoodVision)
+
+console.log(!hasDriversLicense)
+
+
+// if (hasDriversLicense && hasGoodVision) {
+//     console.log('Sarah is able to drive')
+// } else {
+//     console.log('Someone else should drive!')
+// }
+
+const isTired = false; // C
+
+console.log(hasDriversLicense || hasGoodVision || isTired)
+
+
+if (hasDriversLicense && hasGoodVision && !isTired) {
+    console.log('Sarah is able to drive')
+} else {
+    console.log('Someone else should drive!')
+}
