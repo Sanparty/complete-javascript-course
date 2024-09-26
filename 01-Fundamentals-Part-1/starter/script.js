@@ -270,7 +270,7 @@ if (favourite === 23) {
 if (favourite !== 23) console.log('Why not 23?');
 
 
-*/
+
 
 const hasDriversLicense = true; // A
 const hasGoodVision = true; // B
@@ -298,4 +298,58 @@ if (hasDriversLicense && hasGoodVision && !isTired) {
     console.log('Sarah is able to drive')
 } else {
     console.log('Someone else should drive!')
+}
+
+*/
+
+// const day = 'monday';
+
+function capitalizFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+};
+
+// switch (day) {
+//     case 'monday':
+//         console.log(`On ${capitalizFirstLetter(day)}, I work in the office.`);
+//         console.log(`Go to coding meetup`);
+//         break;
+//     case 'tuesday':
+//         console.log(`On ${capitalizFirstLetter(day)}, I work in the office.`);
+//         break;
+//     case 'wednesday':
+//         console.log(`On ${capitalizFirstLetter(day)}, I work in the office half-day`)
+//         break;
+//     case 'thursday':
+//     case 'friday':
+//         console.log(`On ${capitalizFirstLetter(day)}, I work at home`)
+//         break;
+//     case 'saturday':
+//     case 'sunday':
+//         console.log(`On ${capitalizFirstLetter(day)}, I enjoy the weekend`)
+//         break;
+//     default:
+//         console.log(`${day} is not a valid day!`)
+// };
+
+function daySchedule(day) {
+    if (day === 'monday') {
+        console.log(`On ${capitalizFirstLetter(day)}, I work in the office.`);
+        console.log(`Go to coding meetup`);
+    } else if (day === 'tuesday') {
+        console.log(`On ${capitalizFirstLetter(day)}, I work in the office.`);
+    } else if (day === 'wednesday') {
+        console.log(`On ${capitalizFirstLetter(day)}, I work in the office half-day`);
+    } else if (day === 'thursday' || 'friday') {
+        console.log(`On ${capitalizFirstLetter(day)}, I work at home`);
+    } else if (day === 'saturday' || 'sunday') {
+        console.log(`On ${capitalizFirstLetter(day)}, I enjoy the weekend`);
+    } else {
+        console.log(`${day} is not a valid day!`);
+    } 
+};
+let daySelected = '';
+function pickDay() {
+    daySelected = document.getElementById('newName').value;
+    daySchedule(daySelected)
+    daySelected = ''
 }
