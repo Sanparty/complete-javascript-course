@@ -270,7 +270,7 @@ if (favourite === 23) {
 if (favourite !== 23) console.log('Why not 23?');
 
 
-*/
+
 
 const hasDriversLicense = true; // A
 const hasGoodVision = true; // B
@@ -299,3 +299,117 @@ if (hasDriversLicense && hasGoodVision && !isTired) {
 } else {
     console.log('Someone else should drive!')
 }
+
+*/
+
+// const day = 'monday';
+
+
+// switch (day) {
+//     case 'monday':
+//         console.log(`On ${capitalizFirstLetter(day)}, I work in the office.`);
+//         console.log(`Go to coding meetup`);
+//         break;
+//     case 'tuesday':
+//         console.log(`On ${capitalizFirstLetter(day)}, I work in the office.`);
+//         break;
+//     case 'wednesday':
+//         console.log(`On ${capitalizFirstLetter(day)}, I work in the office half-day`)
+//         break;
+//     case 'thursday':
+//     case 'friday':
+//         console.log(`On ${capitalizFirstLetter(day)}, I work at home`)
+//         break;
+//     case 'saturday':
+//     case 'sunday':
+//         console.log(`On ${capitalizFirstLetter(day)}, I enjoy the weekend`)
+//         break;
+//     default:
+//         console.log(`${day} is not a valid day!`)
+// };
+
+function capitalizFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+};
+
+
+// function daySchedule(day) {
+//     if (day === 'monday') {
+//         console.log(`On ${capitalizFirstLetter(day)}, I work in the office.`);
+//         console.log(`Go to coding meetup`);
+//     } else if (day === 'tuesday') {
+//         console.log(`On ${capitalizFirstLetter(day)}, I work in the office.`);
+//     } else if (day === 'wednesday') {
+//         console.log(`On ${capitalizFirstLetter(day)}, I work in the office half-day`);
+//     } else if (day === 'thursday' || day === 'friday') {
+//         console.log(`On ${capitalizFirstLetter(day)}, I work at home`);
+//     } else if (day === 'saturday' || day === 'sunday') {
+//         console.log(`On ${capitalizFirstLetter(day)}, I enjoy the weekend`);
+//     } else {
+//         console.log(`${day} is not a valid day!`);
+//     } 
+// };
+
+let dayText = ''
+function daySchedule(day) {
+    if (day === 'monday') {
+        dayText = `On ${capitalizFirstLetter(day)}, I work in the office.
+        Go to coding meetup`;
+    } else if (day === 'tuesday') {
+        dayText = `On ${capitalizFirstLetter(day)}, I work in the office.`;
+    } else if (day === 'wednesday') {
+        dayText = `On ${capitalizFirstLetter(day)}, I work in the office half-day`;
+    } else if (day === 'thursday' || day === 'friday') {
+        dayText = `On ${capitalizFirstLetter(day)}, I work at home`;
+    } else if (day === 'saturday' || day === 'sunday') {
+        dayText = `On ${capitalizFirstLetter(day)}, I enjoy the weekend`;
+    } else {
+        dayText = `${day} is not a valid day!`;
+    } 
+};
+function pickDay() {
+    let changesched = document.getElementById('daySchedule')
+    selectElement = document.querySelector('#newDay');  
+    daySelected = selectElement.value ;
+    console.log (daySelected) ;
+    daySchedule(daySelected);
+    changesched.innerText = dayText
+}
+// let str = ''
+// if ( 23 > 10 ) {
+//     str = "23 is greater"
+// }
+ 
+// const me = 'Jonas'
+// console.log(`I'm ${2024-1975} years old ${me}`)
+
+let age = 23;
+
+// age >= 18 ? console.log('I like to drink beer') : console.log('I like to drink juice');
+
+const drink = age >= 18 ? 'beer' : 'juice'
+
+console.log(`I like to drink ${drink}`)
+
+let drink2;
+
+if (age>= 18) {
+    drink2 = 'beer';
+} else {
+    drink2 = 'juice';
+}
+
+console.log(drink2);
+
+console.log(`I like to drink ${age >= 18 ? 'beer' : 'juice'}`);
+
+
+const bill = 430;
+
+/* Write your code below. Good luck! 🙂 */
+
+const tip = bill >= 50 && bill <= 300 ? bill * (15/100) : bill * (20/100);
+
+const finalBill = bill + tip;
+
+console.log(`The bill was $${bill}, the tip was $${tip}, and the total value was $${finalBill}.`);

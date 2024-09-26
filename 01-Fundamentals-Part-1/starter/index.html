@@ -11,11 +11,33 @@
 
 <body>
   <h1>JavaScript Fundamentals – Part 1</h1>
-  <h2 id="name">Ann Nakajima</h2>
-  <input id="newName" type="text">
-  <button onclick="changeName()">Change Name</button>
+  <main>
+    <section>
+      <h2 id="name">Ann Nakajima</h2>
+      <input id="newName" type="text">
+      <button onclick="changeName()">Change Name</button>
+    </section>  
+    <section>
+      <h2 id="daySchedule">Pick Day</h2>
+      <select name="days" id="newDay">
+        <option>-- choose a day of the week --</option>
+        <option value="monday">Monday</option>
+        <option value="tuesday">Tuesday</option>
+        <option value="wednesday">Wednesday</option>
+        <option value="thursday">Thursday</option>
+        <option value="friday">Friday</option>
+        <option value="saturday">Saturday</option>
+        <option value="sunday">Sunday</option>
+      </select>
+      <button onclick="pickDay()">Select Day</button>
+      <p id="daySchedule"></p>
+    </section>
+  </main>
+
   <script src="script.js"></script>
   <!-- <script src="assignments.js"></script> -->
+
+
 </body>
 
 </html>
