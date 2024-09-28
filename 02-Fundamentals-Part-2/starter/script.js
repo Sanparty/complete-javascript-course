@@ -45,7 +45,7 @@ const interface = 'Audio';
 
 const private = 534;
 
-*/
+
 let studentFirstName = '';
 
 function logger(name) {
@@ -74,3 +74,62 @@ console.log(appleJuice);
 const appleOrangeJuice = fruitProcessor(3,10);
 console.log(appleOrangeJuice);
 
+
+// function delaration
+// you can call function declaration before you define it
+const danAge1 = calcAge1(1975);
+
+function calcAge1(birthYear) {
+    return 2024 - birthYear;
+}
+
+
+
+
+// function expression
+// expressions produce values
+
+
+
+const calcAge2 = function (birthYear) {
+    return 2024 - birthYear;
+}
+const danAge2 = calcAge2(1975);
+console.log(danAge1, danAge2);
+
+
+
+//arrow functions were added it ES6
+
+const calcAge3 = birthYear => 2024 - birthYear;
+
+const danAge3 = calcAge3(1975);
+
+console.log(danAge3);
+
+const yearsUntilRetirement = (birthYear, firstName, retirementAge) => {
+    const age = 2024 - birthYear;
+    const retirement = retirementAge - age;
+    // return retirement;
+    return `${firstName} retires in ${retirement} years.`
+}
+
+console.log(yearsUntilRetirement(1975, 'Dan', 55));
+console.log(yearsUntilRetirement(1976, 'Ann', 60));
+
+*/
+
+function cutFruitPieces(fruit, pieces) {
+    return fruit * 4;   
+} 
+
+function fruitProcessor (apples, oranges) {
+    const applePieces = cutFruitPieces(apples, 4);
+    const orangePieces = cutFruitPieces(oranges, 4);
+
+    const juice = `Juice with ${applePieces} pieces of apple and ${orangePieces} pieces of orange.
+You start with ${apples} apples and ${oranges} oranges.` 
+    return juice;
+}
+
+console.log(fruitProcessor(3,4));
