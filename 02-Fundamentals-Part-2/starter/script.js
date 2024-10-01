@@ -117,7 +117,7 @@ const yearsUntilRetirement = (birthYear, firstName, retirementAge) => {
 console.log(yearsUntilRetirement(1975, 'Dan', 55));
 console.log(yearsUntilRetirement(1976, 'Ann', 60));
 
-*/
+
 
 function cutFruitPieces(fruit, pieces) {
     return fruit * 4;   
@@ -133,3 +133,33 @@ You start with ${apples} apples and ${oranges} oranges.`
 }
 
 console.log(fruitProcessor(3,4));
+
+*/
+
+const currentYear = new Date().getFullYear();
+
+const calcAge = function(birthYear) {
+    return currentYear - birthYear;
+};
+let age;
+let firstName;
+let retirementAge;
+
+const yearsUntilRetirement = function ()  {
+    const birthYear = document.getElementById('birthYear').value;
+    firstName = document.getElementById('firstName').value;
+    retirementAge = Number(document.getElementById('retirementAge').value);
+    age = calcAge(birthYear)
+    if (birthYear < currentYear && firstName && retirementAge > age) {
+        const retirement = retirementAge - age;
+        // return retirement;
+        document.getElementById('resultRetire').innerText = `The current year is ${currentYear}.
+        ${firstName} plans to retire in ${retirement} years, in ${currentYear + retirement}.`
+    } else {
+         document.getElementById('resultRetire').innerText = `Please enter correct data.`
+    }
+    return age, firstName, retirementAge;
+};
+
+// yearsUntilRetirement(1975, 'Dan', 55);
+
