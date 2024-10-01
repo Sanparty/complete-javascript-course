@@ -1,6 +1,6 @@
 'use strict';
 
-/*
+
 let passTest = '';
 
 function passTestQuery() {
@@ -20,7 +20,7 @@ function passTestQuery() {
 };  
 
 
-
+ /*
 
 
 console.log(passTest);
@@ -39,7 +39,7 @@ if (hasDriversLicense) console.log('I can drive');
 
 
 
- 
+
 
 const interface = 'Audio';
 
@@ -134,7 +134,7 @@ You start with ${apples} apples and ${oranges} oranges.`
 
 console.log(fruitProcessor(3,4));
 
-*/
+
 
 const currentYear = new Date().getFullYear();
 
@@ -145,6 +145,8 @@ let age;
 let firstName;
 let retirementAge;
 
+
+// Dan retirement age chooser
 const yearsUntilRetirement = function ()  {
     const birthYear = document.getElementById('birthYear').value;
     firstName = document.getElementById('firstName').value;
@@ -163,3 +165,31 @@ const yearsUntilRetirement = function ()  {
 
 // yearsUntilRetirement(1975, 'Dan', 55);
 
+*/
+
+const calcAge = function(birthYear) {
+    return 2024 -birthYear;
+}
+const yearsUntilRetirement = function (birthYear, firstName, retirementAge)  {
+    const age = calcAge(birthYear);
+    const retirement = retirementAge - age;
+
+    if (retirement > 0) {
+        console.log(`${firstName} retires in ${retirement} years.`)
+        return retirement;
+    } else {
+        console.log(`${firstName} has already retired`)
+        return -1;
+    }
+
+   
+ `${firstName} retires in ${retirement} years.`
+}
+
+console.log(yearsUntilRetirement(1975, 'Dan', 55))
+console.log(yearsUntilRetirement(1946, 'Ann', 60))
+console.log(yearsUntilRetirement(2000, 'Nick', 65))
+
+// const danRetire = yearsUntilRetirement(1975,'Dan', 65);
+
+// console.log(danRetire);
