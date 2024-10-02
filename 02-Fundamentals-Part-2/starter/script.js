@@ -193,3 +193,55 @@ console.log(yearsUntilRetirement(2000, 'Nick', 65))
 // const danRetire = yearsUntilRetirement(1975,'Dan', 65);
 
 // console.log(danRetire);
+
+// two most important data structures - arrays and objects
+
+const friend1 = 'Michael';
+const friend2 = 'Dan';
+const frined3 = 'Ann';
+
+// literal syntax
+const friends = ['Michael', 'Dan', 'Ann'];
+console.log(friends);
+
+const years = new Array(1991, 1984, 2008, 2020);
+console.log(years);
+
+console.log(friends[2]);
+
+console.log(friends.length);
+
+console.log(friends[friends.length - 1]);
+
+// only primitive values are immutable but an Array is not primitive
+friends[2] = 'Jake';
+
+console.log(friends);
+
+const firstName = 'Dan';
+
+const dan = [firstName, 'San Pedro', 2024 - 1975, 'Mississauga', 'Video Editor', friends];
+
+console.log(dan);
+console.log(dan.length);
+
+console.log(dan[5]);
+
+
+const calcAge2 = function(birthYear) {
+    return 2024 - birthYear;
+}
+
+const y = [1990, 1967, 2002, 2010, 2018];
+
+const age1 = calcAge2(y[0]);
+
+const age2 = calcAge2(y[1]);
+
+const age3 = calcAge2(y[y.length -1]);
+
+console.log(age1,age2,age3);
+
+const ages =[ calcAge2(y[0]),calcAge2(y[1]),calcAge2(y[y.length -1])];
+
+console.log(ages);
