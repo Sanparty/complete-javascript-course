@@ -246,7 +246,7 @@ const ages =[ calcAge2(y[0]),calcAge2(y[1]),calcAge2(y[y.length -1])];
 
 console.log(ages);
 
-*/
+
 // add elements
 const friends = ['Michael', 'Dan', 'Ann'];
 const newLength = friends.push('Janice');
@@ -257,7 +257,7 @@ console.log(newLength);
 friends.unshift('John');
 console.log(friends);
 
-// remove elements
+// remove elements 
 
 const popped = friends.pop() // remove last element of array
 
@@ -281,3 +281,51 @@ console.log(friends.includes(23));
 if (friends.includes('Dan')) {
     console.log(`You have a friend called Dan!`)
 }
+
+*/
+
+
+// objects - define key value pairs
+// order does not matter to retrieve them
+
+const dan = {
+    firstName: 'Dan',
+    lastName: 'San Pedro',
+    age: 2024 - 1975,
+    job: 'Video Editor',
+    friends: ['Gord', 'Dan Kwan', 'Ann']
+};
+
+console.log(dan);
+
+console.log(dan.lastName);
+
+console.log(dan['lastName']);
+
+const nameKey = 'Name';
+
+console.log(dan['first' + nameKey]);
+console.log(dan['last' + nameKey]);
+
+ 
+const answer = prompt('What do you want to know about Dan? Choose between firstName, lastName, age, job, and friends');
+
+
+
+if (dan[answer]) {
+    console.log(dan[answer]);
+} else {
+    console.log(`you didn't choose a correct request. Choose between firstName, lastName, age, job, and friends`)
+}
+
+dan.location = 'Mississauga'
+dan[`twitter`] = '@sanparty'
+
+console.log(dan);
+
+//Challenge
+// "Dan has 3 friends, and his best friend is called Ann."
+
+const challenge = `${dan.firstName} has ${dan.friends.length} friends, and his best friend is called ${dan.friends[2]}.`
+
+console.log(challenge);
