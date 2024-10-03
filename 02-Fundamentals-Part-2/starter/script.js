@@ -195,7 +195,7 @@ console.log(yearsUntilRetirement(2000, 'Nick', 65))
 // console.log(danRetire);
 
 // two most important data structures - arrays and objects
-
+/*
 const friend1 = 'Michael';
 const friend2 = 'Dan';
 const frined3 = 'Ann';
@@ -245,3 +245,39 @@ console.log(age1,age2,age3);
 const ages =[ calcAge2(y[0]),calcAge2(y[1]),calcAge2(y[y.length -1])];
 
 console.log(ages);
+
+*/
+// add elements
+const friends = ['Michael', 'Dan', 'Ann'];
+const newLength = friends.push('Janice');
+
+console.log(friends);
+console.log(newLength);
+
+friends.unshift('John');
+console.log(friends);
+
+// remove elements
+
+const popped = friends.pop() // remove last element of array
+
+console.log(popped);
+console.log(friends);
+
+const shifted = friends.shift();
+console.log(shifted);
+console.log(friends);
+
+console.log(friends.indexOf('Ann'));
+
+friends.push(23);
+
+
+console.log(friends.includes('Dan'));
+console.log(friends.includes('Bob'));
+
+console.log(friends.includes(23));
+
+if (friends.includes('Dan')) {
+    console.log(`You have a friend called Dan!`)
+}
