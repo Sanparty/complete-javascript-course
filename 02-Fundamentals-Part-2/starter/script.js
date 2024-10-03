@@ -135,7 +135,7 @@ You start with ${apples} apples and ${oranges} oranges.`
 console.log(fruitProcessor(3,4));
 
 
-
+*/
 const currentYear = new Date().getFullYear();
 
 const calcAge = function(birthYear) {
@@ -144,6 +144,7 @@ const calcAge = function(birthYear) {
 let age;
 let firstName;
 let retirementAge;
+
 
 
 // Dan retirement age chooser
@@ -165,30 +166,29 @@ const yearsUntilRetirement = function ()  {
 
 // yearsUntilRetirement(1975, 'Dan', 55);
 
-*/
 
-const calcAge = function(birthYear) {
-    return 2024 -birthYear;
-}
-const yearsUntilRetirement = function (birthYear, firstName, retirementAge)  {
-    const age = calcAge(birthYear);
-    const retirement = retirementAge - age;
+// const calcAge = function(birthYear) {
+//     return 2024 -birthYear;
+// }
+// const yearsUntilRetirement = function (birthYear, firstName, retirementAge)  {
+//     const age = calcAge(birthYear);
+//     const retirement = retirementAge - age;
 
-    if (retirement > 0) {
-        console.log(`${firstName} retires in ${retirement} years.`)
-        return retirement;
-    } else {
-        console.log(`${firstName} has already retired`)
-        return -1;
-    }
+//     if (retirement > 0) {
+//         console.log(`${firstName} retires in ${retirement} years.`)
+//         return retirement;
+//     } else {
+//         console.log(`${firstName} has already retired`)
+//         return -1;
+//     }
 
    
- `${firstName} retires in ${retirement} years.`
-}
+//  `${firstName} retires in ${retirement} years.`
+// }
 
-console.log(yearsUntilRetirement(1975, 'Dan', 55))
-console.log(yearsUntilRetirement(1946, 'Ann', 60))
-console.log(yearsUntilRetirement(2000, 'Nick', 65))
+// console.log(yearsUntilRetirement(1975, 'Dan', 55))
+// console.log(yearsUntilRetirement(1946, 'Ann', 60))
+// console.log(yearsUntilRetirement(2000, 'Nick', 65))
 
 // const danRetire = yearsUntilRetirement(1975,'Dan', 65);
 
