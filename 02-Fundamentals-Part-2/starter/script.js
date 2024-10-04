@@ -282,7 +282,7 @@ if (friends.includes('Dan')) {
     console.log(`You have a friend called Dan!`)
 }
 
-*/
+
 
 
 // objects - define key value pairs
@@ -329,3 +329,39 @@ console.log(dan);
 const challenge = `${dan.firstName} has ${dan.friends.length} friends, and his best friend is called ${dan.friends[2]}.`
 
 console.log(challenge);
+*/
+
+const dan = {
+    firstName: 'Dan',
+    lastName: 'San Pedro',
+    birthYear: 1975,
+    job: 'Video Editor',
+    friends: ['Gord', 'Dan Kwan', 'Ann'],
+    hasDriversLicense: true,
+    // calcAge: function(birthYear) {
+    //     return 2024 - birthYear
+    // },
+    // calcAge: function() {
+    //     // console.log(this);
+    //     return 2024 - this.birthYear;
+    // },
+    calcAge: function () {
+       this.age = 2024 - this.birthYear; 
+       return this.age; 
+    },
+    summary: function() {
+        if (this.hasDriversLicense) {
+            return `${this.firstName} is a ${this.calcAge()}-year old ${this.job}, and he has a driver's license`
+        } else {
+            return `${this.firstName} is a ${this.calcAge()}-year old ${this.job}, and he does not have a driver's license`
+        }
+    }
+};
+
+console.log(dan.calcAge());
+
+console.log(dan.age);
+console.log(dan.age);
+console.log(dan.age);
+console.log(dan.summary());
+// console.log(dan['calcAge'](1975));
