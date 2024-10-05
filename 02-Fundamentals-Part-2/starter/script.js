@@ -350,12 +350,29 @@ const dan = {
        return this.age; 
     },
     summary: function() {
-        if (this.hasDriversLicense) {
-            return `${this.firstName} is a ${this.calcAge()}-year old ${this.job}, and he has a driver's license`
-        } else {
-            return `${this.firstName} is a ${this.calcAge()}-year old ${this.job}, and he does not have a driver's license`
+        // if (this.hasDriversLicense) {
+        //     return `${this.firstName} is a ${this.calcAge()}-year old ${this.job}, and he has a driver's license`
+        // } else {
+        //     return `${this.firstName} is a ${this.calcAge()}-year old ${this.job}, and he does not have a driver's license`
+        // }
+        return `${this.firstName} is a ${this.calcAge()}-year old ${this.job}, and ${this.hasDriversLicense ? "he has a driver's license" : "he does not have a driver's license"}`
         }
-    }
+};
+
+const ann = {
+    firstName: 'Ann',
+    lastName: 'Nakajima',
+    birthYear: 1976,
+    job: 'Naturopathic Doctor',
+    friends: ['Dan', 'Paula', 'Lois'],
+    hasDriversLicense: false,
+    calcAge: function () {
+       this.age = 2024 - this.birthYear; 
+       return this.age; 
+    },
+    summary: function() {
+        return `${this.firstName} is a ${this.calcAge()}-year old ${this.job}, and ${this.hasDriversLicense ? "she has a driver's license" : "she does not have a driver's license"}`
+        }
 };
 
 console.log(dan.calcAge());
@@ -364,4 +381,5 @@ console.log(dan.age);
 console.log(dan.age);
 console.log(dan.age);
 console.log(dan.summary());
+console.log(ann.summary());
 // console.log(dan['calcAge'](1975));
