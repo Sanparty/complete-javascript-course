@@ -164,3 +164,52 @@ const yearsUntilRetirement = function ()  {
     }
     return age, firstName, retirementAge;
 };
+
+// calc highest value in array
+
+const values = [ 25, 50, 15, 5, 20, 100, 45, 50];
+
+
+const values2 = [ 25, 500, 15, 5, 20, 100, 45, 50, 2, 640];
+
+// const calcHighest = function(arr) {
+//     let highest = arr[0];
+//     for (let i = 0; i < arr.length; i++) {
+//         let nextValue = arr [i + 1];
+//         if (nextValue) {
+//             if (nextValue > highest) {
+//                 highest = nextValue
+//             }
+//         }
+//     }
+//     return highest
+// }
+
+// console.log('highest value is ' + calcHighest(values))
+
+const calcHighAndLow = function(arr) {
+    let highest = arr[0];
+    let lowest = arr[0];
+    for (let i = 0; i < arr.length; i++) {
+        let nextValue = arr [i + 1];
+        if (nextValue) {
+            if (nextValue > highest) {
+                highest = nextValue
+            } else {
+                lowest = nextValue
+            }
+        }
+    }
+    const valueResults = [ highest, lowest ]
+    return valueResults
+};
+
+console.log(calcHighAndLow(values));
+
+const highLow = calcHighAndLow(values);
+
+console.log(`The highest value is ${highLow[0]} and the lowest value is ${highLow[1]}.`)
+
+const highLow2 = calcHighAndLow(values2);
+
+console.log(`The highest value is ${highLow2[0]} and the lowest value is ${highLow2[1]}.`)
