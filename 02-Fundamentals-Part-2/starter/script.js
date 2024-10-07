@@ -1,23 +1,7 @@
 'use strict';
 
 
-let passTest = '';
 
-function passTestQuery() {
-   passTest =  document.getElementById('passTestQuestion').value;
-    if (passTest) {
-        console.log(typeof passTest);
-        if (passTest == 'yes') {
-            console.log('yes works')
-            document.getElementById('passShow').innerText = 'I can drive'
-        } else if (passTest == 'no') {
-            console.log('no works')
-            document.getElementById('passShow').innerText = 'I cannot drive'
-        } else {
-            document.getElementById('passShow').innerText = 'Choose an answer please'
-        }
-    }    
-};  
 
 
  /*
@@ -135,34 +119,8 @@ You start with ${apples} apples and ${oranges} oranges.`
 console.log(fruitProcessor(3,4));
 
 
-*/
-const currentYear = new Date().getFullYear();
-
-const calcAge = function(birthYear) {
-    return currentYear - birthYear;
-};
-let age;
-let firstName;
-let retirementAge;
 
 
-
-// Dan retirement age chooser
-const yearsUntilRetirement = function ()  {
-    const birthYear = document.getElementById('birthYear').value;
-    firstName = document.getElementById('firstName').value;
-    retirementAge = Number(document.getElementById('retirementAge').value);
-    age = calcAge(birthYear)
-    if (birthYear < currentYear && firstName && retirementAge > age) {
-        const retirement = retirementAge - age;
-        // return retirement;
-        document.getElementById('resultRetire').innerText = `The current year is ${currentYear}.
-        ${firstName} plans to retire in ${retirement} years, in ${currentYear + retirement}.`
-    } else {
-         document.getElementById('resultRetire').innerText = `Please enter correct data.`
-    }
-    return age, firstName, retirementAge;
-};
 
 // yearsUntilRetirement(1975, 'Dan', 55);
 
@@ -329,59 +287,16 @@ console.log(dan);
 const challenge = `${dan.firstName} has ${dan.friends.length} friends, and his best friend is called ${dan.friends[2]}.`
 
 console.log(challenge);
-*/
 
-const dan = {
-    firstName: 'Dan',
-    lastName: 'San Pedro',
-    birthYear: 1975,
-    job: 'Video Editor',
-    friends: ['Gord', 'Dan Kwan', 'Ann'],
-    hasDriversLicense: true,
-    // calcAge: function(birthYear) {
-    //     return 2024 - birthYear
-    // },
-    // calcAge: function() {
-    //     // console.log(this);
-    //     return 2024 - this.birthYear;
-    // },
-    calcAge: function () {
-       this.age = 2024 - this.birthYear; 
-       return this.age; 
-    },
-    summary: function() {
-        // if (this.hasDriversLicense) {
-        //     return `${this.firstName} is a ${this.calcAge()}-year old ${this.job}, and he has a driver's license`
-        // } else {
-        //     return `${this.firstName} is a ${this.calcAge()}-year old ${this.job}, and he does not have a driver's license`
-        // }
-        return `${this.firstName} is a ${this.calcAge()}-year old ${this.job}, and ${this.hasDriversLicense ? "he has a driver's license" : "he does not have a driver's license"}`
-        }
-};
 
-const ann = {
-    firstName: 'Ann',
-    lastName: 'Nakajima',
-    birthYear: 1976,
-    job: 'Naturopathic Doctor',
-    friends: ['Dan', 'Paula', 'Lois'],
-    hasDriversLicense: false,
-    calcAge: function () {
-       this.age = 2024 - this.birthYear; 
-       return this.age; 
-    },
-    summary: function() {
-        return `${this.firstName} is a ${this.calcAge()}-year old ${this.job}, and ${this.hasDriversLicense ? "she has a driver's license" : "she does not have a driver's license"}`
-        }
-};
 
 // console.log(dan.calcAge());
 
 // console.log(dan.age);
 // console.log(dan.age);
 // console.log(dan.age);
-console.log(dan.summary());
-console.log(ann.summary());
+// console.log(dan.summary());
+// console.log(ann.summary());
 // console.log(dan['calcAge'](1975));
 
 
@@ -394,7 +309,7 @@ console.log(ann.summary());
 //     console.log(`Lifting weights repetition ${rep}`);
 // };
 
-
+*/
 const danArray = [
     'Dan',
     'Sam Pedro',
@@ -473,13 +388,24 @@ for (let i = danArray2.length - 1; i >= 0; i--) {
 }
 
 
+
 for (let exercise = 1; exercise <= 3; exercise++) {
     console.log(`----  Starting exercise ${exercise}`);
     for (let rep = 1; rep < 6; rep++) {
-        console.log(`Lifting weights repetition ${rep} of exercise ${exercise}`);
+        console.log(`Exercise ${exercise}: Lifting weights repetition ${rep}`);
     };
 }
 
 // for (let rep = 1; rep <= 10; rep++) {
 //         console.log(`Lifting weights repetition ${rep}`);
 //     };
+
+const exercises = [ 'push-ups', 'jumping jacks', 'burpies'];
+
+
+for (let i = 0; i < exercises.length; i++) {
+    console.log(`----  Starting exercise ${exercises[i]}`);
+    for (let rep = 1; rep < 6; rep++) {
+        console.log(`${exercises[i]}: Repetition ${rep}`);
+    };
+}
