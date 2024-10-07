@@ -375,11 +375,111 @@ const ann = {
         }
 };
 
-console.log(dan.calcAge());
+// console.log(dan.calcAge());
 
-console.log(dan.age);
-console.log(dan.age);
-console.log(dan.age);
+// console.log(dan.age);
+// console.log(dan.age);
+// console.log(dan.age);
 console.log(dan.summary());
 console.log(ann.summary());
 // console.log(dan['calcAge'](1975));
+
+
+// console.log('Lifting weights repetition 1');
+// console.log('Lifting weights repetition 2');
+
+
+// for loop will run while condition is true
+// for (let rep = 1; rep <= 10; rep++) {
+//     console.log(`Lifting weights repetition ${rep}`);
+// };
+
+
+const danArray = [
+    'Dan',
+    'Sam Pedro',
+    2024 - 1975,
+    'video editor',
+    ['Ann', 'Dan Kwan', 'Gord'],
+    true
+];
+
+const types = [];
+
+for (let i = 0; i < danArray.length; i++) {
+    // reading from array
+    console.log(danArray[i], typeof danArray[i]);
+
+    //filling types array
+    // types[i] = typeof danArray[i];
+
+    types.push(typeof danArray[i]); 
+ }
+
+console.log(types);
+
+const years = [ 1991, 2007, 1969, 2020];
+
+const ages = [];
+
+const calcAge2 = function(birthYear) {
+    return 2024 - birthYear;
+}
+
+// for (let i = 0; i < years.length; i++) {
+//     ages.push(calcAge(years[i]));
+//     console.log(ages[i] + '-years old');
+// }
+
+for (let i = 0; i < years.length; i++) {
+    ages.push(calcAge(years[i]));
+    console.log(ages[i] + ' years old');
+}
+
+console.log(ages);
+
+// continue and break;
+console.log('----only strings');
+for (let i = 0; i < danArray.length; i++) {
+    if (typeof danArray[i] !== 'string') continue;
+
+    console.log(danArray[i], typeof danArray[i]);
+ };
+
+// break terminates the loop
+console.log('---break with number');
+for (let i = 0; i < danArray.length; i++) {
+    if (typeof danArray[i] === 'number') break;
+
+    console.log(danArray[i], typeof danArray[i]);
+ };
+
+
+
+ // looping backwards through arrays;
+
+ const danArray2 = [
+    'Dan',
+    'Sam Pedro',
+    2024 - 1975,
+    'video editor',
+    ['Ann', 'Dan Kwan', 'Gord'],
+    true
+];
+
+
+for (let i = danArray2.length - 1; i >= 0; i--) {
+    console.log(i, danArray2[i]);
+}
+
+
+for (let exercise = 1; exercise <= 3; exercise++) {
+    console.log(`----  Starting exercise ${exercise}`);
+    for (let rep = 1; rep < 6; rep++) {
+        console.log(`Lifting weights repetition ${rep} of exercise ${exercise}`);
+    };
+}
+
+// for (let rep = 1; rep <= 10; rep++) {
+//         console.log(`Lifting weights repetition ${rep}`);
+//     };
