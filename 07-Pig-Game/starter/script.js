@@ -10,6 +10,7 @@ const currentScore0El = document.querySelector('#current--0');
 const currentScore1El = document.querySelector('#current--1');
 const player0Section = document.querySelector('.player--0');
 const player1Section = document.querySelector('.player--1');
+const newGameBtn = document.querySelector('.btn--new');
 // Starting condition
 let score0 = 0;
 let score1 = 0;
@@ -19,13 +20,15 @@ score0El.textContent = score0;
 score1El.textContent = score1;
 diceEl.classList.add('hidden');
 let activePlayer = 0;
-const winningScore = 10;
+const winningScore = 50;
 const diceImage = function (diceNumber) {
   return `dice-${diceNumber}.png`;
 };
 const resetCurrent = function () {
   currentScore0 = 0;
   currentScore1 = 0;
+  currentScore0El.textContent = currentScore0;
+  currentScore1El.textContent = currentScore1;
 };
 const switchPlayer = function () {
   if (activePlayer === 0) {
@@ -55,17 +58,23 @@ const addTotalScore = function () {
     score0 += currentScore0;
     if (score0 >= winningScore) {
       playerWins(activePlayer);
+    } else {
+      score0El.textContent = score0;
+      score1El.textContent = score1;
+      resetCurrent();
+      switchPlayer();
     }
   } else {
     score1 += currentScore1;
     if (score1 >= winningScore) {
       playerWins(activePlayer);
+    } else {
+      score0El.textContent = score0;
+      score1El.textContent = score1;
+      resetCurrent();
+      switchPlayer();
     }
   }
-  resetCurrent();
-  switchPlayer();
-  score0El.textContent = score0;
-  score1El.textContent = score1;
 };
 
 const rollDice = function () {
@@ -91,10 +100,34 @@ const playerWins = function (player) {
     document.querySelector('#name--1').textContent = `PLayer 2 Wins!`;
     console.log('player 2 wins');
   }
+  diceEl.classList.add('hidden');
+  diceRollBtn.classList.add('hidden');
+  holdBtn.classList.add('hidden');
 };
 const hold = function () {
   addTotalScore();
+  diceEl.classList.add('hidden');
+};
+
+const newGame = function () {
+  resetCurrent();
+  if (activePlayer === 1) {
+    switchPlayer();
+  }
+  if (!diceEl.classList.contains('hidden')) {
+    diceEl.classList.add('hidden');
+  }
+  diceRollBtn.classList.remove('hidden');
+  holdBtn.classList.remove('hidden');
+  document.querySelector('#name--0').textContent = `PLayer 1`;
+  document.querySelector('#name--1').textContent = `PLayer 2`;
+  score0 = 0;
+  score1 = 0;
+  score0El.textContent = score0;
+  score1El.textContent = score1;
 };
 
 diceRollBtn.addEventListener('click', rollDice);
 holdBtn.addEventListener('click', hold);
+newGameBtn.addEventListener('click', newGame);
+1;
