@@ -100,7 +100,8 @@ main {
 }
 
 /* ABSOLUTE POSITIONED ELEMENTS */
-.btn {
+.btn,
+.winningScore {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -156,7 +157,10 @@ main {
   height: 10rem;
   box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2);
 }
-
+.winningScore {
+  top: 53.1rem;
+  text-align: center;
+}
 .player--winner {
   background-color: #2f2f2f;
 }
