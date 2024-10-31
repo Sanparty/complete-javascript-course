@@ -1,5 +1,5 @@
 'use strict';
-
+/*
 function calcAge(birthYear) {
   const age = 2024 - birthYear;
   function printAge() {
@@ -82,12 +82,40 @@ const calcAgeArrow = birthYear => {
 };
 calcAgeArrow(1980);
 
+const ann = {
+  firstName: 'Ann',
+  lastName: 'Nakajima',
+  year: 1980,
+};
+/*
+dan.calcAge();
+
+ann.calcAge = dan.calcAge;
+
+ann.calcAge();
+
+const f = dan.calcAge;
+
+f();
+*/
+// var firstName2 = 'DSP';
+
 const dan = {
-  year: 1927,
+  firstName2: 'Dan',
+  year: 1975,
+
   calcAge: function () {
     console.log(2024 - this.year);
-    console.log(this);
+    const self = this;
+    // console.log(this);
+    const isMillenial = function () {
+      console.log(self);
+      console.log(self.year >= 1981 && self.year <= 1996);
+    };
+    isMillenial();
   },
+  greet: () => console.log(`Hi ${this.firstName2}`),
 };
-
+// arrow fun tion does not get it's own this keyword
+dan.greet();
 dan.calcAge();
