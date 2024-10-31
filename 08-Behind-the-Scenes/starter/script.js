@@ -64,3 +64,30 @@ const z = 3;
 console.log(x === window.x);
 console.log(y === window.y);
 console.log(z === window.z);
+
+//this keyword in practice
+
+console.log(this);
+
+const calcAge2 = function (birthYear) {
+  console.log(2024 - birthYear);
+  console.log(this);
+};
+
+calcAge2(1975);
+
+const calcAgeArrow = birthYear => {
+  console.log(2024 - birthYear);
+  console.log(this);
+};
+calcAgeArrow(1980);
+
+const dan = {
+  year: 1927,
+  calcAge: function () {
+    console.log(2024 - this.year);
+    console.log(this);
+  },
+};
+
+dan.calcAge();
