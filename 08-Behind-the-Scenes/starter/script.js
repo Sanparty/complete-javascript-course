@@ -97,7 +97,7 @@ ann.calcAge();
 const f = dan.calcAge;
 
 f();
-*/
+
 // var firstName2 = 'DSP';
 
 const dan = {
@@ -106,12 +106,21 @@ const dan = {
 
   calcAge: function () {
     console.log(2024 - this.year);
-    const self = this;
-    // console.log(this);
-    const isMillenial = function () {
-      console.log(self);
-      console.log(self.year >= 1981 && self.year <= 1996);
+
+    // soloution 1
+    // const self = this;
+    // // console.log(this);
+    // const isMillenial = fu nction () {
+    //   console.log(self);
+    //   console.log(self.year >= 1981 && self.year <= 1996);
+    // };
+
+    //solution 2
+    const isMillenial = () => {
+      console.log(this);
+      console.log(this.year >= 1981 && this.year <= 1996);
     };
+
     isMillenial();
   },
   greet: () => console.log(`Hi ${this.firstName2}`),
@@ -119,3 +128,75 @@ const dan = {
 // arrow fun tion does not get it's own this keyword
 dan.greet();
 dan.calcAge();
+
+// Arguments keyword
+const addExp = function (a, b) {
+  console.log(arguments);
+  return a + b;
+};
+
+addExp(5, 10);
+// no arguments in arrow function
+var addArrow = (a, b) => {
+  console.log(arguments);
+  return a + b;
+};
+
+addArrow(10, 20);
+
+let age = 30;
+let oldAge = age;
+age = 31;
+
+console.log(age);
+console.log(oldAge);
+
+const me = {
+  name: 'Dan',
+  age: 49,
+};
+
+const friend = me;
+friend.age = 30;
+
+console.log('friend:', friend);
+console.log('me:', me);
+*/
+// Primitive Types
+let lastName = 'San Pedro';
+let oldLastName = lastName;
+lastName = 'Nakajima';
+console.log(lastName);
+console.log(oldLastName);
+//Reference types
+const dan = {
+  firstName: 'Dan',
+  lastName: 'San Pedro',
+  age: 49,
+};
+
+const marriedDan = dan;
+marriedDan.lastName = 'Nakajima';
+console.log('before marriage:', dan);
+console.log('after marriage:', marriedDan);
+
+// marriedDan = {};
+
+//copying objects
+
+const dan2 = {
+  firstName: 'Dan',
+  lastName: 'San Pedro',
+  age: 49,
+  family: ['Ann', 'Nick', 'Jake'],
+};
+// object.assign creates a shallow copy
+const danCopy = Object.assign({}, dan2);
+
+danCopy.lastName = 'Nakajima';
+
+danCopy.family.push('Aileen');
+danCopy.family.push('Alexander');
+
+console.log('before marriage:', dan2);
+console.log('after marriage:', danCopy);
