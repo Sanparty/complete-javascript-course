@@ -29,8 +29,100 @@ const restaurant = {
       close: 24,
     },
   },
+  orderDelivery: function({starterIndex = 1, mainIndex = 0, time = '20;00', address}) {
+    console.log(`Order received! ${this.starterMenu[starterIndex]} and  ${this.mainMenu[mainIndex]}, to be delivered at ${time} to this location: ${address}.`);
+  },
+  orderPasta: function(ing1, ing2, ing3) {
+    console.log(`Here is your delicious pasta with ${ing1}, ${ing2}, and ${ing3}.`);
+  }
 };
 
+const arr = [7,8,9];
+
+const newArray = [1,2,...arr];
+
+console.log(newArray);
+console.log(...newArray);
+
+const newMenu = [...restaurant.mainMenu, 'gnocchi','lasagne'];
+console.log(newMenu);
+
+// Copy array
+
+const mainMenuCopy = [...restaurant.mainMenu];
+
+//Join 2 arrays
+
+const menu = [...restaurant.starterMenu,...restaurant.mainMenu];
+console.log(menu);
+
+
+//Iterables: arrays, strings, maps, sets. NOT objects
+
+const str = 'Daniel';
+
+const letters = [...str,'', 'S','P'];
+console.log(letters);
+
+// const ingredients = [prompt('Let\'s make pasta! Ingredient 1?'), prompt('Ingredient 2?'), prompt('Ingredient 3?')];
+// console.log(ingredients);
+// restaurant.orderPasta(...ingredients);
+
+//Objects
+
+const newRestaurant = {foundedIn: 1998, ...restaurant, founder: 'Dan San Pedro'}
+
+console.log(newRestaurant);
+
+const restaurantCopy = {...restaurant};
+
+restaurantCopy.name = 'Italian Dan';
+
+console.log(restaurantCopy.name);
+console.log(restaurant.name);
+
+console.log(restaurantCopy);
+
+//Destructuring Objects
+/*
+restaurant.orderDelivery({
+  time: '22:30',
+  address: '2441 Ploughshare Crt',
+  mainIndex: 2,
+  starterIndex: 2,
+})
+
+restaurant.orderDelivery({
+  address: '2441 Ploughshare Crt',
+  starterIndex: 3,
+})
+
+
+const { name, categories, openingHours } = restaurant
+console.log( name, categories, openingHours );
+
+const { name: restaurantName, openingHours: hours, categories: tags} = restaurant
+console.log(restaurantName, hours, tags);
+// default values
+const {menu = [], starterMenu: starters = [] } = restaurant
+console.log(menu, starters);
+
+// mutating variables
+
+let a = 111;
+let b = 999;
+const obj = {a: 23, b: 7, c: 14};
+({ a, b } = obj);
+console.log(a,b);
+
+// NEsted objects
+
+const { fri: {open: o, close: c} } = openingHours;
+console.log(o, c);
+
+
+
+/*
 const arr = [1, 2, 3];
 
 const a = arr [0];
@@ -68,3 +160,5 @@ console.log(i,j,k);
 // default values
 const [p = 1, q = 1, r = 1] = [8,9];
 console.log(p,q,r);
+
+*/
