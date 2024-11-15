@@ -44,28 +44,50 @@ const restaurant = {
       `Here is your delicious pasta with ${ing1}, ${ing2}, and ${ing3}.`
     );
   },
-  orderPizza: function(mainIngredient, ...otherIngredients) {
+  orderPizza: function (mainIngredient, ...otherIngredients) {
     console.log(mainIngredient);
     console.log(otherIngredients);
-  }
+  },
 };
 
+// use any data taype, return any data type, short circuiting or short circuit evaluation
+
+console.log(3 || 'Dan');
+
+console.log('' || 'Dan');
+
+console.log(true || 0);
+
+console.log(undefined || null);
+
+console.log(undefined || 0 || '' || 'Hello' || 23 || null);
+restaurant.numGuests = 50;
+const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guests1);
+
+const guests2 = restaurant.numGuests || 10;
+console.log(guests2);
+
+/*
 //Destructuring
 
 // SPREAD, because on RIGHT side of =
-const arr = [1, 2, ...[3,4]];
+const arr = [1, 2, ...[3, 4]];
 
 // REST, because on LEFT side of =
 const [a, b, ...others] = [1, 2, 3, 4, 5];
 console.log(a, b, others);
 
 // REST has to be last element... one REST in any destructuring assignment
-const [pizza, , risotto, ...otherfood] = [...restaurant.mainMenu, ...restaurant.starterMenu]
+const [pizza, , risotto, ...otherfood] = [
+  ...restaurant.mainMenu,
+  ...restaurant.starterMenu,
+];
 console.log(pizza, risotto, otherfood);
 
 //Objects
 
-const { sat, ...weekdays} = restaurant.openingHours;
+const { sat, ...weekdays } = restaurant.openingHours;
 console.log(weekdays);
 
 // 2) Functions
@@ -75,12 +97,12 @@ const add = function (...numbers) {
 
   console.log(numbers);
   console.log(sum);
-}
+};
 
-add(2,3);
-add(5,10,15);
-add(5,6,7,3,4);
-add(-5,10,25);
+add(2, 3);
+add(5, 10, 15);
+add(5, 6, 7, 3, 4);
+add(-5, 10, 25);
 
 const x = [25, 30, 45];
 
