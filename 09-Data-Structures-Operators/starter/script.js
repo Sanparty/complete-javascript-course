@@ -63,10 +63,24 @@ console.log(undefined || null);
 console.log(undefined || 0 || '' || 'Hello' || 23 || null);
 restaurant.numGuests = 50;
 const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
-console.log(guests1);
+console.log('guests1', guests1);
 
 const guests2 = restaurant.numGuests || 10;
-console.log(guests2);
+console.log('guests2', guests2);
+
+console.log('---- AND ----');
+
+console.log(0 && 'Dan');
+
+console.log('Ann' && 'Dan');
+
+console.log(23 && 'Ann' && null && 'Simon');
+
+if (restaurant.orderPizza) {
+  restaurant.orderPizza('chicken', 'mushrooms', 'cheese', 'onions');
+}
+
+restaurant.orderPizza && restaurant.orderPizza('chicken', 'mushrooms');
 
 /*
 //Destructuring
