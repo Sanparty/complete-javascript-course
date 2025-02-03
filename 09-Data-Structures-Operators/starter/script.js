@@ -16,10 +16,6 @@ const openingHours = {
     open: 11,
     close: 23,
   },
-  [`day-${2 + 6}`]: {
-    open: 0, // Open 24 hours
-    close: 24,
-  },
   [weekdays[5]]: {
     open: 0, // Open 24 hours
     close: 24,
@@ -53,6 +49,35 @@ const restaurant = {
   },
 };
 
+// Property Names
+
+const properties = Object.keys(openingHours);
+console.log(properties);
+
+let openStr = `We are open on ${properties.length} days: `;
+
+for (const day of properties) {
+  openStr += `${day}, `;
+}
+
+console.log(openStr);
+
+// Property Values
+
+const values = Object.values(openingHours);
+console.log(values);
+
+// Entire object
+
+const entries = Object.entries(openingHours);
+console.log(entries);
+
+for (const [day, { open, close }] of entries) {
+  console.log(
+    `On ${day.toUpperCase()} we open at ${open} and close at ${close}.`
+  );
+}
+
 /* for of loop
 const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
 console.log('this is the whole menu: ' + menu);
@@ -63,6 +88,7 @@ for (const [i, el] of menu.entries()) {
   console.log(`${i + 1}. ${el}`);
 }
 */
+/*
 const rest1 = {
   name: 'Capri',
   numGuests: 0,
