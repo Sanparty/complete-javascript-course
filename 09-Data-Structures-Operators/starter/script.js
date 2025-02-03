@@ -73,7 +73,33 @@ const rest2 = {
   owner: 'Dan San Pedro',
 };
 
-// OR assignment operator
+if (restaurant.openingHours && restaurant.openingHours.mon)
+  console.log(restaurant.openingHours.mon.open);
+
+// console.log(restaurant.openingHours.mon.open);
+
+// with optional chaining
+
+console.log(restaurant.openingHours.mon?.open);
+console.log(restaurant.openingHours?.mon?.open);
+
+const days = ['mon', 'tue', 'wed', 'thurs', 'fri', 'sat', 'sun'];
+
+for (const day of days) {
+  const open = restaurant.openingHours[day]?.open ?? 'closed';
+  console.log(`On ${day}, we open at ${open}.`);
+}
+
+// Methods
+console.log(restaurant.order?.(0, 1) ?? 'Method does not exist');
+console.log(restaurant.order2?.(0, 1) ?? 'Method does not exist');
+
+// Arrays
+
+const users = [{ name: 'dan', email: 'dan@me.com' }];
+
+console.log(users[0]?.name ?? 'user array empty');
+
 // rest1.numGuests ||= 10;
 // rest2.numGuests ||= 10;
 
