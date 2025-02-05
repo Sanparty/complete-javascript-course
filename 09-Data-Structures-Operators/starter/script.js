@@ -49,6 +49,116 @@ const restaurant = {
   },
 };
 
+const orderSet = new Set(['Pasta', 'Pizza', 'Risotto', 'Pizza', 'Pasta']);
+
+console.log(orderSet);
+
+console.log(new Set('Daniel'));
+
+console.log(orderSet.size);
+
+console.log(orderSet.has('Pizza'));
+
+orderSet.add('Garlic Bread');
+orderSet.add('Garlic Bread');
+orderSet.delete('Risotto');
+// orderSet.clear();
+console.log(orderSet);
+
+for (const order of orderSet) console.log(order);
+
+// Example
+
+const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
+
+const staffUnique = [...new Set(staff)];
+
+console.log(staffUnique);
+
+console.log(new Set(staff).size);
+
+console.log('DanSanPedro'.length);
+
+const rest = new Map();
+
+rest.set('name', 'Classico');
+rest.set(1, 'Firenze, Italy');
+rest.set(2, 'Lisbon, Portugal');
+
+rest
+  .set('categories', ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'])
+  .set('open', 11)
+  .set('close', 23)
+  .set(true, 'We are open')
+  .set(false, 'We are closed');
+
+// console.log(rest.get('name'));
+// console.log(rest.get(true));
+
+const time = 8;
+console.log(rest);
+console.log(rest.get(time > rest.get('open') && time < rest.get('close')));
+
+console.log(rest.has('categories'));
+rest.delete(2);
+// rest.clear();
+const arr = [1, 2];
+rest.set(arr, 'Test');
+rest.set(document.querySelector('h1'), 'Heading');
+console.log(rest);
+console.log(rest.size);
+
+console.log(rest.get(arr));
+
+/*
+// New Operations to make sets useful
+
+const italianFoods = new Set([
+  'pasta',
+  'gnocchi',
+  'tomatoes',
+  'olive oil',
+  'garlic',
+  'basil',
+]);
+
+const mexicanFoods = new Set([
+  'tortillas',
+  'beans',
+  'rice',
+  'tomatoes',
+  'avocado',
+  'garlic',
+]);
+
+const commonFoods = italianFoods.intersection(mexicanFoods);
+
+console.log('Intersection:', commonFoods);
+console.log([...commonFoods]);
+
+const italianMexicanFusion = italianFoods.union(mexicanFoods);
+
+console.log('Union:', italianMexicanFusion);
+
+[...italianFoods, ...mexicanFoods];
+console.log([...new Set([...italianFoods, ...mexicanFoods])]);
+
+const uniqueItalianFoods = italianFoods.difference(mexicanFoods);
+
+console.log('Difference Italian:', uniqueItalianFoods);
+
+const uniqueMexicanFoods = mexicanFoods.difference(italianFoods);
+
+console.log('Difference Mexican:', uniqueMexicanFoods);
+
+const uniqueItalianAndMexicanFoods =
+  italianFoods.symmetricDifference(mexicanFoods);
+
+console.log('Unique:', uniqueItalianAndMexicanFoods);
+
+console.log(italianFoods.isDisjointFrom(mexicanFoods));
+
+
 // Property Names
 
 const properties = Object.keys(openingHours);
@@ -458,7 +568,7 @@ BONUS: Create an object called 'scorers' which contains the names of the players
       }
 
 GOOD LUCK 😀
-*/
+
 
 const game = {
   team1: 'Bayern Munich',
@@ -531,3 +641,4 @@ for (const player of game.scored) {
 }
 
 console.log(scorers);
+*/
