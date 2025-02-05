@@ -522,3 +522,12 @@ for (const [team, teamOdd] of Object.entries(game.odds)) {
   const teamString = team === `x` ? 'draw' : `victory ${game[team]}`;
   console.log(`Odd of ${teamString}: ${teamOdd}`);
 }
+
+const scorers = {};
+
+for (const player of game.scored) {
+  scorers[player] ? scorers[player]++ : (scorers[player] = 1);
+  console.log(scorers);
+}
+
+console.log(scorers);
