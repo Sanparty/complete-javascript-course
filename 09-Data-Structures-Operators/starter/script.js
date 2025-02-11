@@ -49,10 +49,157 @@ const restaurant = {
   },
 };
 
+// Working with Strings Part 2
+
+const airline = 'TAP Air Portugal';
+
+console.log(airline.toLowerCase());
+console.log(airline.toUpperCase());
+
+console.log('dan'.toUpperCase());
+
+// fix capitalization in name
+
+const passenger = 'dANiEl'; // Daniel
+
+const passengerLower = passenger.toLowerCase();
+
+const passengerCorrect =
+  passengerLower[0].toUpperCase() + passengerLower.slice(1);
+
+console.log(passengerCorrect);
+
+const correctName = function (passenger) {
+  const passengerLower = passenger.toLowerCase();
+  const passengerCorrect =
+    passengerLower[0].toUpperCase() + passengerLower.slice(1);
+  console.log(passengerCorrect);
+};
+
+correctName('nAKaJima');
+
+// Comparing email
+
+const email = 'hello@dan.com';
+
+const loginEmail = '  Hello@Dan.com  \n';
+
+const compareEmail = function (email, loginEmail) {
+  // const lowerEmail = loginEmail.toLowerCase();
+  // const trimmedEmail = lowerEmail.trim();
+  // console.log(trimmedEmail);
+
+  const normalizedEmail = loginEmail.toLowerCase().trim();
+  console.log(normalizedEmail);
+  console.log(
+    email === normalizedEmail
+      ? 'email addresses match'
+      : 'email addresses do not match'
+  );
+};
+
+compareEmail('dansp@me.com', 'sanparty@me.com');
+
+// replacing parts of strings
+
+const priceGB = '288,97£';
+const priceUS = priceGB.replace('£', '$').replace(',', '.');
+
+console.log(priceUS);
+
+const announcement =
+  'All passengers come to boarding door 23. Boarding door 23!';
+
+// console.log(announcement.replaceAll('door', 'gate'));
+
+console.log(announcement.replace(/door/g, 'gate'));
+
+//Booleans
+
+const plane = 'Airbus A320neo';
+
+console.log(plane.includes('A320'));
+console.log(plane.includes('Boeing'));
+console.log(plane.startsWith('Air'));
+
+if (plane.startsWith('Airbus') && plane.endsWith('neo')) {
+  console.log('part of the new airbus family');
+}
+
+// Practice
+
+const checkBaggage = function (items) {
+  const baggage = items.toLowerCase();
+  if (baggage.includes('knife') || baggage.includes('gun')) {
+    console.log('You are not allowed on board');
+  } else {
+    console.log('You are welcome aboard');
+  }
+};
+
+checkBaggage('I have a laptop, some Food and a pocket Knife');
+
+checkBaggage('Socks and camera');
+
+checkBaggage('Got some snacks and a gun for protection');
+
+/*
+
+// Working with Strings Part 1
+
+
+const plane = 'A320';
+
+console.log(plane[0]);
+console.log(plane[1]);
+console.log(plane[2]);
+
+console.log('B737'[0]);
+
+console.log(airline.length);
+console.log('B737'.length);
+
+console.log(airline.indexOf('r'));
+
+console.log(airline.lastIndexOf('r'));
+
+console.log(airline.indexOf('Air'));
+
+console.log(airline.slice(4));
+
+const airlineName = airline.slice(4);
+
+console.log(airlineName);
+
+console.log(airline.slice(4, 7));
+
+console.log(airline.slice(0, airline.indexOf(' ')));
+
+console.log(airline.slice(airline.lastIndexOf(' ') + 1));
+
+console.log(airline.slice(-2));
+console.log(airline.slice(1, -1));
+
+const checkMiddleSeat = function (seat) {
+  // B AND E ARE MIDDLE SEATS
+  const s = seat.slice(-1);
+  if (s === 'B' || s === 'E') console.log(`You got the middle seat at ${seat}`);
+  else console.log(`You got lucky at ${seat}`);
+};
+
+checkMiddleSeat('11B');
+checkMiddleSeat('23C');
+checkMiddleSeat('3E');
+
+console.log(new String('dan'));
+console.log(Object.entries('dan'));
+console.log(typeof new String('dan'));
+
+
 ///////////////////////////////////////
 // Coding Challenge #3
 
-/* 
+
 Let's continue with our football betting app! This time, we have a map with a log of the events that happened during the game. The values are the events themselves, and the keys are the minutes in which each event happened (a football game has 90 minutes plus some extra time).
 
 1. Create an array 'events' of the different game events that happened (no duplicates)
@@ -62,7 +209,7 @@ Let's continue with our football betting app! This time, we have a map with a lo
       [FIRST HALF] 17: ⚽️ GOAL
 
 GOOD LUCK 😀
-*/
+
 
 const gameEvents = new Map([
   [17, '⚽️ GOAL'],
@@ -97,7 +244,7 @@ for (const [min, event] of gameEvents) {
   const half = min <= 45 ? 'FIRST' : 'SECOND';
   console.log(`[${half} HALF] ${min}: ${event}`);
 }
-/*
+
 const question = new Map([
   ['question', 'What is the best programming language in the world?'],
   [1, 'C'],
