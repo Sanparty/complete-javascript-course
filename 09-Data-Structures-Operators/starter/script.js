@@ -93,7 +93,8 @@ document.querySelector('button').addEventListener('click', function () {
     console.log(newRow);
     const secondWord = newRow[1];
     const finalWord =
-      newRow[0] + secondWord[0].toUpperCase() + secondWord.slice(1);
+      newRow[0] +
+      secondWord.replace(secondWord[0], secondWord[0].toUpperCase());
     results.push(finalWord.trim());
   }
   let longestString = '';
@@ -107,7 +108,7 @@ document.querySelector('button').addEventListener('click', function () {
   }
   for (let i = 0; i < results.length; i++) {
     console.log(
-      results[i].padEnd(longestString.length + 4, ' ') + '✅'.repeat(i + 1)
+      results[i].padEnd(longestString.length + 4) + '✅'.repeat(i + 1)
     );
   }
 });
