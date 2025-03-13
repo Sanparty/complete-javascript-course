@@ -164,3 +164,29 @@ console.log(japanAirlines);
 book.call(japanAirlines, ...flightData);
 
 console.log(japanAirlines);
+
+//Bind method
+// book.call(eurowings, 23, 'Nick Manucdoc');
+
+const bookEW = book.bind(eurowings);
+const bookJAL = book.bind(japanAirlines);
+
+bookEW(23, 'Jake Manucdoc');
+bookJAL(45, 'Jake Manucdoc');
+
+const bookEW23 = book.bind(eurowings, 235);
+
+bookEW23('Donald Smith');
+
+//With Event Listeners
+
+japanAirlines.planes = 300;
+japanAirlines.buyPlane = function () {
+  console.log(this);
+  this.planes++;
+  console.log(this.planes);
+};
+
+document
+  .querySelector('.buy')
+  .addEventListener('click', japanAirlines.buyPlane.bind(japanAirlines));
