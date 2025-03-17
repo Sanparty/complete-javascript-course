@@ -215,7 +215,6 @@ console.log(addVAT2(23));
 //   };
 // };
 
-*/
 
 ///////////////////////////////////////
 // Coding Challenge #1
@@ -249,7 +248,7 @@ BONUS TEST DATA 1: [5, 2, 3]
 BONUS TEST DATA 2: [1, 5, 3, 9, 6, 1]
 
 GOOD LUCK 😀
-*/
+
 
 const poll = {
   question: 'What is your favourite programming language?',
@@ -287,3 +286,92 @@ poll.displayResults.call({ answers: [5, 2, 3] });
 poll.displayResults.call({ answers: [1, 5, 3, 9, 6, 1] });
 //   BONUS TEST DATA 1: [5, 2, 3]
 // BONUS TEST DATA 2: [1, 5, 3, 9, 6, 1]
+
+
+
+// Immediately Invoked Function Expressions (IIFE)
+
+// const runOnce = function () {
+//   console.log('This will never run again');
+// };
+
+// runOnce();
+
+(function () {
+  console.log('This will never run again');
+  const isPrivate = 23;
+})();
+
+(() => console.log('This will also never run again'))();
+
+{
+  const isPrivate = 23;
+  var notPrivate = 46;
+}
+
+console.log(notPrivate);
+
+const secureBooking = function () {
+  let passengerCount = 0;
+
+  return function () {
+    passengerCount++;
+    console.log(`${passengerCount} passengers`);
+  };
+};
+const booker = secureBooking();
+
+booker();
+booker();
+booker();
+booker();
+
+console.dir(booker);
+
+
+let f;
+
+const g = function () {
+  const a = 23;
+  f = function () {
+    console.log(a * 2);
+  };
+};
+
+const h = function () {
+  const b = 777;
+  f = function () {
+    console.log(b * 2);
+  };
+};
+
+g();
+f();
+console.dir(f);
+// Re-assinging f function
+h();
+f();
+console.dir(f);
+
+const boardPassengers = function (n, wait) {
+  const perGroup = n / 3;
+
+  setTimeout(function () {
+    console.log(`We are now boarding all ${n} passgers`);
+    console.log(`There are 3 groups, each with ${perGroup} passengers`);
+  }, wait * 1000);
+  console.log(`Will start boarding in ${wait} seconds`);
+};
+
+const perGroup = 1000;
+boardPassengers(180, 3);
+
+*/
+
+(function () {
+  const header = document.querySelector('h1');
+  header.style.color = 'red';
+  document.body.addEventListener('click', function () {
+    header.style.color = 'blue';
+  });
+})();
