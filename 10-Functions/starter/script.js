@@ -257,17 +257,33 @@ const poll = {
   // This generates [0, 0, 0, 0]. More in the next section 😃
   answers: new Array(4).fill(0),
   registerNewAnswer() {
-    let answer = prompt(`${this.question}
-      ${this.options}
-      (Write option number)`);
-    if (Number.isNaN(answer)) {
-      console.log(answer);
-      this.answers[answer] = this.answers[answer] + 1;
+    const answer = prompt(
+      `${this.question}\n${this.options.join('\n')}\n(Write option number)`
+    );
+    let answerNumber = parseInt(answer);
+    if (answerNumber < this.answers.length) {
+      this.answers[answer]++;
+      this.displayResults();
+      this.displayResults('string');
     } else {
       alert('Please enter a correct option!');
+    }
+  },
+  displayResults(type = 'array') {
+    if (type === 'array') {
+      console.log(this.answers);
+    } else if (type === 'string') {
+      console.log(`Poll results are ${this.answers.join(', ')}`);
     }
   },
 };
 document
   .querySelector('.poll')
   .addEventListener('click', poll.registerNewAnswer.bind(poll));
+
+poll.displayResults.call({ answers: [5, 2, 3] }, 'string');
+poll.displayResults.call({ answers: [1, 5, 3, 9, 6, 1] }, 'string');
+poll.displayResults.call({ answers: [5, 2, 3] });
+poll.displayResults.call({ answers: [1, 5, 3, 9, 6, 1] });
+//   BONUS TEST DATA 1: [5, 2, 3]
+// BONUS TEST DATA 2: [1, 5, 3, 9, 6, 1]
