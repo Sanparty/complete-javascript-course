@@ -91,3 +91,19 @@ arr.splice(-1);
 console.log(arr);
 arr.splice(1, 2);
 console.log(arr);
+
+// REVERSE does mutate the original array
+
+arr = ['a', 'b', 'c', 'd', 'e'];
+
+const arr2 = ['j', 'k', 'i', 'h', 'l'];
+console.log(arr2.reverse());
+console.log(arr2);
+
+const letters = arr.concat(arr2);
+
+console.log(letters);
+console.log([...arr, ...arr2]);
+
+// JOIN
+console.log(letters.join(' - '));
