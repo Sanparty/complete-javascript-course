@@ -79,11 +79,24 @@ const displayMovements = function (movements) {
 
 displayMovements(account1.movements);
 
+const createUsernames = function (accs) {
+  accs.forEach(function (acc) {
+    acc.username = acc.owner
+      .toLowerCase()
+      .split(' ')
+      .map(name => name[0])
+      .join('');
+  });
+};
+
+createUsernames(accounts);
+console.log(accounts);
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
 
-// const currencies = new Map([
+// const currencieson  = new Map([
 //   ['USD', 'United States dollar'],
 //   ['EUR', 'Euro'],
 //   ['GBP', 'Pound sterling'],
@@ -201,7 +214,7 @@ TEST DATA 1: Julia's data [3, 5, 2, 12, 7], Kate's data [4, 1, 15, 8, 3]
 TEST DATA 2: Julia's data [9, 16, 6, 8, 3], Kate's data [10, 5, 6, 1, 4]
 
 GOOD LUCK 😀
-*/
+
 
 const juliaData1 = [3, 5, 2, 12, 7];
 const kateData1 = [4, 1, 15, 8, 3];
@@ -226,3 +239,49 @@ const checkDogs = function (dogsJulia, dogsKate) {
 checkDogs(juliaData1, kateData1);
 console.log(`------`);
 checkDogs(juliaData2, kateData2);
+
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+const euroToUsd = 1.1;
+
+// const movementsUsd = movements.map(function (mov) {
+//   return mov * euroToUsd;
+// });
+
+const movementsUsd = movements.map(mov => mov * euroToUsd);
+
+console.log(movements);
+console.log(movementsUsd);
+
+const movementsUsdFor = [];
+
+for (const mov of movements) movementsUsdFor.push(mov * euroToUsd);
+
+console.log(movementsUsdFor);
+
+const movementsDescrip = movements.map(
+  (mov, i) =>
+    `Movement ${i + 1}: You ${mov > 0 ? `deposited` : `withdrew`} ${Math.abs(
+      mov
+    )}`
+);
+
+console.log(movementsDescrip);
+*/
+
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+const deposits = movements.filter(function (mov) {
+  return mov > 0;
+});
+
+const depositsFor = [];
+for (const mov of movements) if (mov > 0) depositsFor.push(mov);
+
+console.log(movements);
+console.log(deposits);
+console.log(depositsFor);
+
+const withdrawals = movements.filter(mov => mov < 0);
+
+console.log(withdrawals);
